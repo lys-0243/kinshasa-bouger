@@ -27,3 +27,34 @@
   src: url("../../public/fonts/Poppins-Light.ttf");
 }
 
+.grayImg {
+  filter: gray;
+  -webkit-filter: grayscale(1); 
+  filter: grayscale(1);
+}
+
+.customHalfGradient {
+  
+  background: linear-gradient(
+    to right, 
+    #ffffff 0%, 
+    #cce1fe 65%, 
+    #fff 65%, 
+    #fff 100%
+  );
+  height: 100%;
+  width: 100%;
+}
+
+
+.nav-element:hover {
+  transition: all 0.3s ease;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+  --tw-text-opacity: 1;
+    color: rgb(199 26 12 / var(--tw-text-opacity));
+    border-bottom-width: 2px;
+    border-color: rgb(199 26 12 / var(--tw-border-opacity));
+}
+
