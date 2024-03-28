@@ -16,7 +16,8 @@ const config: Config = {
       orange: "#e45c16",
       white: "#fff",
       grayHard: "#212121",
-      grayLight: "#f6f6f6",
+      grayLight: "#bcbcbc",
+      grayLight2: "#f1f1f1",
     },
     fontFamily: {
       PExtra: ["Poppins-ExtraBold", "sans-serif"],

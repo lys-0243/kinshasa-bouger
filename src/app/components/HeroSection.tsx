@@ -5,9 +5,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay } from "swiper/modules";
+import "swiper/css/free-mode";
+import "swiper/css/scrollbar";
+import { Autoplay, FreeMode, Mousewheel, Scrollbar } from "swiper/modules";
 import Link from "next/link";
-import { BoldFont, ExtraFont, LightFont, MediumFont } from "../config/fonts";
+import {
+  BlackFont,
+  BoldFont,
+  ExtraFont,
+  LightFont,
+  MediumFont,
+} from "../config/fonts";
+// import "./biographie.css";
 
 const slides = [
   {
@@ -48,7 +57,7 @@ const gouvImages = [
 export default function HeroSection() {
   return (
     <section
-      className="bg-[url('/img/hero-bg-optimizer.png')] bg-cover bg-no-repeat "
+      className="bg-[url('/img/hero-bg-optimizer.png')] bg-cover bg-no-repeat h-screen"
       id="Accueil"
     >
       <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg pb-24 pt-4 space-y-12 ">
@@ -89,7 +98,7 @@ export default function HeroSection() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            className="flex w-1/2 flex-col gap-10"
+            className="flex w-1/2 flex-col gap-10 "
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index} className=" space-y-7">
