@@ -1,5 +1,6 @@
 import React from "react";
+import { ExtraFont } from "../config/fonts";
 
 export default function Biographie() {
-  return <div>Biographie</div>;
+  return <div className={ExtraFont.className}>Biographie</div>;
 }

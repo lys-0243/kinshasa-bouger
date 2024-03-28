@@ -1,14 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
-import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import Link from "next/link";
+import { BoldFont, ExtraFont, LightFont, MediumFont } from "../config/fonts";
 
 const slides = [
   {
@@ -47,11 +46,9 @@ const gouvImages = [
 ];
 
 export default function HeroSection() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   return (
     <section
-      className="bg-[url('/img/hero-bg2.png')] bg-cover bg-no-repeat "
+      className="bg-[url('/img/hero-bg-optimizer.png')] bg-cover bg-no-repeat "
       id="Accueil"
     >
       <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg pb-24 pt-4 space-y-12 ">
@@ -64,7 +61,7 @@ export default function HeroSection() {
             className=""
           />
           <div>
-            <nav className="flex gap-8 uppercase font-PMedium">
+            <nav className={`${MediumFont.className} flex gap-8 uppercase`}>
               <Link href="#Accueil" className="nav-element">
                 Kin Gouv
               </Link>
@@ -96,13 +93,13 @@ export default function HeroSection() {
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index} className=" space-y-7">
-                <h1 className=" font-PExtra text-6xl text-bleu">
+                <h1 className={`${ExtraFont.className} text-6xl text-bleu`}>
                   {slide.title}
                 </h1>
-                <p className=" font-PBold text-4xl text-primary">
+                <p className={`${BoldFont.className} text-4xl text-primary`}>
                   {slide.underTitle}
                 </p>
-                <p className=" text-grayHard font-PLight mr-20">
+                <p className={` text-grayHard ${LightFont.className} mr-20`}>
                   {slide.description}
                 </p>
               </SwiperSlide>
@@ -124,6 +121,9 @@ export default function HeroSection() {
                   src={slideImage.src}
                   alt={slideImage.alt}
                   fill
+                  // placeholder="blur"
+                  quality={100}
+                  priority
                   style={{
                     objectFit: "cover",
                     padding: 14,
