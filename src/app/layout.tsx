@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Kinshasa doit bouger",
   description: "Que veux-tu voir changer ? Eloko nini faut é changer?",
-  applicationName: "Kluba",
+  applicationName: "Pesa Avis Nayo",
   icons: {
     icon: "/img/favicon.png",
   },
