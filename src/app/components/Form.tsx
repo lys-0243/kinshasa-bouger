@@ -1,8 +1,6 @@
 import React from "react";
 import { BoldFont, LightFont, MediumFont } from "../config/fonts";
 import { IoIosSend } from "react-icons/io";
-import InputComponent from "./InputComponent";
-import InputSelect from "./InputSelect";
 import { communes } from "./data";
 
 export default function CustomForm() {
@@ -47,8 +45,6 @@ export default function CustomForm() {
             </div>
           </div>
 
-          <InputSelect />
-
           <div className="col-span-2">
             <div className=" h-[1px] bg-primary bg-opacity-10 mt-3 mb-3"></div>
 
@@ -58,46 +54,91 @@ export default function CustomForm() {
               l&apos;intérêt{" "}
             </p>
             <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 ">
-              <InputComponent
-                label="Prénom"
-                type="text"
-                name="prenom"
-                placeholder="Sylvain"
-                require
-              />
-              <InputComponent
-                label="Nom"
-                require
-                type="text"
-                name="nom"
-                placeholder="Tshiasuma"
-              />
-              <InputComponent
-                label="Email"
-                type="email"
-                name="email"
-                require={false}
-                placeholder="user@domain.com (Faculattif)"
-              />
-              <InputComponent
-                label="Téléphone"
-                type="tel"
-                name="telephone"
-                placeholder="+243 894 XXX XXX"
-                require
-              />
+              <div>
+                <label
+                  className={`${MediumFont.className} block text-sm leading-6 text-text`}
+                >
+                  Prénom <span className=" text-primary">*</span>
+                </label>
+                <div>
+                  <input
+                    type={"text"}
+                    name={"prenom"}
+                    required
+                    placeholder={"Sylvain"}
+                    className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  className={`${MediumFont.className} block text-sm leading-6 text-text`}
+                >
+                  Nom <span className=" text-primary">*</span>
+                </label>
+                <div>
+                  <input
+                    type={"text"}
+                    name={"nom"}
+                    required
+                    placeholder={"Tshiasuma"}
+                    className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  className={`${MediumFont.className} block text-sm leading-6 text-text`}
+                >
+                  Email
+                </label>
+                <div>
+                  <input
+                    type={"email"}
+                    name={"email"}
+                    placeholder={"user@domain.com (Faculattif)"}
+                    className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  className={`${MediumFont.className} block text-sm leading-6 text-text`}
+                >
+                  Téléphone <span className=" text-primary">*</span>
+                </label>
+                <div>
+                  <input
+                    type={"tel"}
+                    name={"telephone"}
+                    required
+                    placeholder={"user@+243 894 XXX XXX"}
+                    className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+                  />
+                </div>
+              </div>
             </div>
 
             <div className=" h-[1px] bg-primary bg-opacity-10  mt-6"></div>
           </div>
 
-          <InputComponent
-            label="Votre avis"
-            type="textarea"
-            require
-            name="textarea"
-            placeholder="Saisissez votre avis ici"
-          />
+          <div className="sm:col-span-2">
+            <label className="block text-sm font-semibold leading-6 text-text">
+              Votre avis compte <span className=" text-primary">*</span>
+            </label>
+            <div>
+              <textarea
+                name="message"
+                required
+                rows={4}
+                placeholder="Saisissez votre avis ici"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight focus:ring-2 focus:ring-inset focus:ring-text sm:text-sm sm:leading-6"
+              ></textarea>
+            </div>
+          </div>
         </div>
         <div className="mt-10">
           <button
