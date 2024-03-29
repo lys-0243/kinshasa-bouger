@@ -3,19 +3,19 @@ export const slides = [
     title: "Kinshasa doit bouger",
     underTitle: "Que veux-tu voir changer ?",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic optio ducimus voluptas illo ipsa in beatae veritatis eius cupiditate reiciendis ea, ad porro dolores id! Ipsum dolores fugit numquam.",
+      "Donnez votre avis sur ce que vous pensez apporter ou ce que le prochain gouverneur doit faire pour le développement de la ville de Kinshasa.",
   },
   {
     title: "Kinshasa faut ebonga",
     underTitle: "Eloko nini faut é changer ?",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic optio ducimus voluptas illo ipsa in beatae veritatis eius cupiditate reiciendis ea, ad porro dolores id! Ipsum dolores fugit numquam.",
+      "Pesa avis na yo to solution oyo esengele , eloko prochain gouverneur il faut asala pona développement ya ville ya Kinshasa.",
   },
   {
     title: "Kinshasa, capitale du monde",
     underTitle: "Nini eza malamu pona yo ?",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic optio ducimus voluptas illo ipsa in beatae veritatis eius cupiditate reiciendis ea, ad porro dolores id! Ipsum dolores fugit numquam.",
+      "Pesa avis na yo to solution oyo esengele , eloko prochain gouverneur il faut asala pona développement ya ville ya Kinshasa.",
   },
 ];
 
@@ -337,4 +337,31 @@ export const commentDatas = [
     comment:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie nisi eu est dictum, non sodales urna luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis accumsan, turpis vel maximus venenatis, quam magna viverra magna, vitae feugiat arcu purus ac enim.",
   },
+];
+
+export const communes = [
+  { title: "Bandalungwa" },
+  { title: "Barumbu" },
+  { title: "Bumbu" },
+  { title: "Gombe" },
+  { title: "Kalamu" },
+  { title: "Kasa-Vubu" },
+  { title: "Kimbanseke" },
+  { title: "Kinshasa" },
+  { title: "Kintambo" },
+  { title: "Kisenso" },
+  { title: "Lemba" },
+  { title: "Limete" },
+  { title: "Lingwala" },
+  { title: "Makala" },
+  { title: "Maluku" },
+  { title: "Masina" },
+  { title: "Matete" },
+  { title: "Mont-Ngafula" },
+  { title: "Ndjili" },
+  { title: "Ngaba" },
+  { title: "Ngaliema" },
+  { title: "Ngiri-Ngiri" },
+  { title: "Nsele" },
+  { title: "Selembao" },
 ];

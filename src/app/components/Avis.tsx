@@ -11,21 +11,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Avis() {
   const [commentData, setCommentData] = useState(commentDatas);
-  console.log(Math.floor(commentData.length * 0.15));
+
   return (
     <section
-      className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg my-12 mb-28 md:pt-24"
+      className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg my-6 mb-20 mt-20 md:mt-0"
       id="DonnerSonAvis"
     >
       <div className="w-2/2 space-y-3 mb-7 px-3 text-center md:text-left">
         <h2 className={`${BlackFont.className} text-3xl text-bleu`}>
           Postez votre avis...
         </h2>
-        <p className={`${RegularFont.className} text-text text-xs md:w-2/3`}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
-          ea quia nostrum aliquam provident ut aliquid placeat natus illo nam,
-          earum recusandae neque quo! Deserunt hic dolor repudiandae nesciunt
-          aliquam.
+        <p
+          className={`${RegularFont.className} text-text text-xs md:text-base md:w-2/3`}
+        >
+          Pesa avis na yo to solution oyo esengele , eloko prochain gouverneur
+          il faut asala pona développement ya ville ya Kinshasa.
         </p>
       </div>
 
@@ -83,7 +83,7 @@ export default function Avis() {
           </div>
         </div>
 
-        <div className="md:hidden ">
+        {/* <div className="md:hidden ">
           <Swiper
             autoplay={{
               delay: 3500,
@@ -125,10 +125,10 @@ export default function Avis() {
                 </SwiperSlide>
               ))}
           </Swiper>
-        </div>
+        </div> */}
       </div>
 
-      <div className="hidden md:flex md:items-start md:justify-between md:gap-6 md:mt-10">
+      {/* <div className="hidden md:flex md:items-start md:justify-between md:gap-6 md:mt-10">
         <Swiper
           autoplay={{
             delay: 3900,
@@ -177,7 +177,7 @@ export default function Avis() {
               </SwiperSlide>
             ))}
         </Swiper>
-      </div>
+      </div> */}
     </section>
   );
 }

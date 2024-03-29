@@ -19,8 +19,8 @@ import { gouvImagesBiographie } from "./data";
 
 export default function Biographie() {
   return (
-    <section id="Gouv" className=" mt-12">
-      <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg md:bg-grayLight2 rounded-xl  mb-10 md:pr-8">
+    <section id="Gouv" className=" mt-12 md:mt-6">
+      <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg md:bg-grayLight2 rounded-xl mb-6 md:pr-8">
         <div className="flex flex-col-reverse md:flex md:flex-row md:items-center md:py-14 md:pl-10 gap-5 md:gap-0">
           <Swiper
             spaceBetween={30}
