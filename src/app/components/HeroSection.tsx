@@ -5,54 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/free-mode";
-import "swiper/css/scrollbar";
-import { Autoplay, FreeMode, Mousewheel, Scrollbar } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import Link from "next/link";
-import {
-  BlackFont,
-  BoldFont,
-  ExtraFont,
-  LightFont,
-  MediumFont,
-} from "../config/fonts";
-// import "./biographie.css";
-
-const slides = [
-  {
-    title: "Kinshasa doit bouger",
-    underTitle: "Que veux-tu voir changer ?",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic optio ducimus voluptas illo ipsa in beatae veritatis eius cupiditate reiciendis ea, ad porro dolores id! Ipsum dolores fugit numquam.",
-  },
-  {
-    title: "Kinshasa faut ebonga",
-    underTitle: "Eloko nini faut é changer ?",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic optio ducimus voluptas illo ipsa in beatae veritatis eius cupiditate reiciendis ea, ad porro dolores id! Ipsum dolores fugit numquam.",
-  },
-  {
-    title: "Kinshasa, capitale du monde",
-    underTitle: "Nini eza malamu pona yo ?",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic optio ducimus voluptas illo ipsa in beatae veritatis eius cupiditate reiciendis ea, ad porro dolores id! Ipsum dolores fugit numquam.",
-  },
-];
-
-const gouvImages = [
-  {
-    src: "/img/gouv/gouv1.png",
-    alt: "Gouverneur01",
-  },
-  {
-    src: "/img/gouv/gouv11.png",
-    alt: "Gouverneur02",
-  },
-  {
-    src: "/img/gouv/gouv111.png",
-    alt: "Gouverneur03",
-  },
-];
+import { BoldFont, ExtraFont, LightFont, MediumFont } from "../config/fonts";
+import { gouvImages, slides } from "./data";
 
 export default function HeroSection() {
   return (
@@ -80,7 +36,7 @@ export default function HeroSection() {
               <Link href="#HowItWork" className="nav-element">
                 Comment ça marche
               </Link>
-              <Link href="#Accueil" className="nav-element">
+              <Link href="#DonnerSonAvis" className="nav-element">
                 Votre avis compte
               </Link>
               <Link href="#Accueil" className="nav-element">
@@ -97,8 +53,8 @@ export default function HeroSection() {
               delay: 3500,
               disableOnInteraction: false,
             }}
-            modules={[Autoplay]}
-            className="flex w-1/2 flex-col gap-10 "
+            modules={[Autoplay, Pagination]}
+            className="flex w-1/2 flex-col gap-10 relative"
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index} className=" space-y-7">
@@ -130,7 +86,6 @@ export default function HeroSection() {
                   src={slideImage.src}
                   alt={slideImage.alt}
                   fill
-                  // placeholder="blur"
                   quality={100}
                   priority
                   style={{
