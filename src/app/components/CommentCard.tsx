@@ -4,7 +4,7 @@ import { BoldFont, RegularFont } from "../config/fonts";
 export default function CommentCard({ commentElement }: any) {
   return (
     <div className=" flex justify-center items-center my-4">
-      <div className="bg-white customCardShadow rounded-lg w-1/2 p-3">
+      <div className="bg-white customCardShadow rounded-lg w-full md:w-1/2 p-4 ">
         <div className="m-2 flex items-center justify-between ">
           <div className="flex items-center gap-x-3">
             <svg
@@ -27,7 +27,9 @@ export default function CommentCard({ commentElement }: any) {
             {commentElement.date}
           </p>
         </div>
-        <p className={`${RegularFont.className} text-text text-sm`}>
+        <p
+          className={`${RegularFont.className} text-text text-sm text-clip overflow-hidden h-[6rem]`}
+        >
           {commentElement.comment}
         </p>
       </div>
@@ -37,7 +39,7 @@ export default function CommentCard({ commentElement }: any) {
 export function CommentCardOnePerView({ commentElement }: any) {
   return (
     <div className=" flex justify-center items-center my-4">
-      <div className="bg-white customCardShadow rounded-lg  p-3 ">
+      <div className="bg-white customCardShadow w-full rounded-lg  p-3 ">
         <div className="m-2 flex items-center justify-between ">
           <div className="flex items-center gap-x-3">
             <svg

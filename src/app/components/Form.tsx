@@ -22,7 +22,7 @@ export default function CustomForm() {
             <p className={`${LightFont.className} italic text-text text-sm`}>
               Les informations relevant à votre identité sont gardées dans la
               stricte mesure de vous contacter si votre avis suscite de
-              l'intérêt{" "}
+              l&apos;intérêt{" "}
             </p>
             <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 ">
               <InputComponent

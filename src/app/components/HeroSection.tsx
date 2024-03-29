@@ -13,11 +13,11 @@ import { gouvImages, slides } from "./data";
 export default function HeroSection() {
   return (
     <section
-      className="bg-[url('/img/hero-bg-optimizer.png')] bg-cover bg-no-repeat h-screen"
+      className="bg-[url('/img/hero-bg-mobile.png')] xl:bg-[url('/img/hero-bg-optimizer.png')] max-h-screen bg-cover bg-no-repeat sm:h-screen"
       id="Accueil"
     >
       <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg pb-24 pt-4 space-y-12 ">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-center lg:flex lg:justify-between lg:items-center">
           <Image
             src="/img/kin-logo.png"
             alt="Logo Kinshasa"
@@ -25,7 +25,7 @@ export default function HeroSection() {
             height={40}
             className=""
           />
-          <div>
+          <div className="hidden xl:flex">
             <nav className={`${MediumFont.className} flex gap-8 uppercase`}>
               <Link href="#Accueil" className="nav-element">
                 Kin Gouv
@@ -46,7 +46,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="space-y-6 mx-4 xl:flex xl:items-center">
           <Swiper
             spaceBetween={30}
             autoplay={{
@@ -54,17 +54,21 @@ export default function HeroSection() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay, Pagination]}
-            className="flex w-1/2 flex-col gap-10 relative"
+            className="text-center md:text-left  md:flex md:w-1/2 md:flex-col md:gap-10 md:relative"
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index} className=" space-y-7">
-                <h1 className={`${ExtraFont.className} text-6xl text-bleu`}>
+                <h1
+                  className={`${ExtraFont.className} text-4xl md:text-6xl text-bleu`}
+                >
                   {slide.title}
                 </h1>
-                <p className={`${BoldFont.className} text-4xl text-primary`}>
+                <p
+                  className={`${BoldFont.className} text-2xl md:text-4xl text-primary`}
+                >
                   {slide.underTitle}
                 </p>
-                <p className={` text-grayHard ${LightFont.className} mr-20`}>
+                <p className={` text-grayHard ${LightFont.className} md:mr-20`}>
                   {slide.description}
                 </p>
               </SwiperSlide>
@@ -78,7 +82,7 @@ export default function HeroSection() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            className="h-[28rem] bg-white w-1/2 shadow-2xl p-4 rounded-2xl relative space-y-2"
+            className=" h-[22rem] md:h-[28rem] w-full bg-white md:w-1/2 shadow-2xl p-2 md:p-4 rounded-2xl relative space-y-2"
           >
             {gouvImages.map((slideImage, index) => (
               <SwiperSlide key={index} className=" space-y-7 rounded-xl">

@@ -19,9 +19,9 @@ import { gouvImagesBiographie } from "./data";
 
 export default function Biographie() {
   return (
-    <section>
-      <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg bg-grayLight2 rounded-xl py-14 mb-10 pr-8">
-        <div className="  flex items-center pl-10">
+    <section id="Gouv" className=" mt-12">
+      <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg md:bg-grayLight2 rounded-xl  mb-10 md:pr-8">
+        <div className="flex flex-col-reverse md:flex md:flex-row md:items-center md:py-14 md:pl-10 gap-5 md:gap-0">
           <Swiper
             spaceBetween={30}
             autoplay={{
@@ -29,7 +29,7 @@ export default function Biographie() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay, Pagination]}
-            className="w-1/2 p-5"
+            className="w-full md:w-1/2 md:p-5"
           >
             {gouvImagesBiographie.map((slideImage, index) => (
               <SwiperSlide key={index} className=" space-y-7 rounded-xl">
@@ -45,8 +45,8 @@ export default function Biographie() {
             ))}
           </Swiper>
 
-          <div className="w-1/2 bg-orangee">
-            <div className=" space-y-2 mb-4">
+          <div className="md:w-1/2">
+            <div className=" md:space-y-2 md:mb-4 text-center md:text-left">
               <h2 className={`${BlackFont.className} text-bleu text-4xl`}>
                 Diyabanza Mwananene
               </h2>
@@ -62,10 +62,10 @@ export default function Biographie() {
               scrollbar={true}
               mousewheel={true}
               modules={[FreeMode, Scrollbar, Mousewheel]}
-              className={`${LightFont.className} text-text text-justify leading-4 swiperCard`}
+              className={`${LightFont.className} text-text text-justify leading-4 swiperCard mt-4`}
             >
-              <SwiperSlide className="swiperSlide">
-                <p className="leading-5 pr-4 text-sm">
+              <SwiperSlide className="swiperSlide px-7 shadow-inner ">
+                <p className="leading-5 text-sm">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                   luctus, ex eu sagittis faucibus, ligula ipsum sagittis magna,
                   et imperdiet dolor lectus eu libero. Vestibulum venenatis eget
@@ -73,13 +73,13 @@ export default function Biographie() {
                   ullamcorper sem.
                 </p>{" "}
                 <br />
-                <p className="leading-5 pr-4 text-sm">
+                <p className="leading-5 text-sm">
                   Suspendisse rhoncus fringilla nisl. Mauris eget lorem ac urna
                   consectetur convallis non vel mi. Donec libero dolor, volutpat
                   ut urna sit amet, aliquet molestie purus.
                 </p>{" "}
                 <br />
-                <p className="leading-5 pr-4 text-sm">
+                <p className="leading-5 text-sm">
                   Curabitur eget aliquam erat. Curabitur a neque vitae purus
                   volutpat elementum. Vivamus quis vestibulum leo, efficitur
                   ullamcorper velit. Integer tincidunt finibus metus vel porta.
@@ -87,7 +87,7 @@ export default function Biographie() {
                   Nulla hendrerit consectetur arcu et lacinia.
                 </p>{" "}
                 <br />
-                <p className="leading-5 pr-4 text-sm">
+                <p className="leading-5 text-sm">
                   Curabitur sed sodales leo. Nulla facilisi. Etiam condimentum,
                   nisi id tempor vulputate, nisi justo cursus justo,
                   pellentesque condimentum diam arcu sit amet leo. Cum sociis
@@ -98,7 +98,7 @@ export default function Biographie() {
                   aliquam. Vestibulum elementum posuere vehicula.
                 </p>{" "}
                 <br />
-                <p className="leading-5 pr-4 text-sm">
+                <p className="leading-5 text-sm">
                   Sed tincidunt diam a massa pharetra faucibus. Praesent
                   condimentum id arcu nec fringilla. Maecenas faucibus, ante et
                   venenatis interdum, erat mi eleifend dui, at convallis nisl
@@ -114,7 +114,7 @@ export default function Biographie() {
                   rhoncus nibh in massa pretium scelerisque.
                 </p>{" "}
                 <br />
-                <p className="leading-5 pr-4 text-sm">
+                <p className="leading-5 text-sm">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                   luctus, ex eu sagittis faucibus, ligula ipsum sagittis magna,
                   et imperdiet dolor lectus eu libero. Vestibulum venenatis eget
@@ -130,7 +130,7 @@ export default function Biographie() {
                   non volutpat. Vivamus vestibulum quam ut ultricies pretium.
                 </p>{" "}
                 <br />
-                <p className="leading-5 pr-4 text-sm">
+                <p className="leading-5 text-sm">
                   Sed tincidunt diam a massa pharetra faucibus. Praesent
                   condimentum id arcu nec fringilla. Maecenas faucibus, ante et
                   venenatis interdum, erat mi eleifend dui, at convallis nisl
@@ -151,8 +151,8 @@ export default function Biographie() {
         </div>
       </div>
 
-      <div className="bg-[#f6feff] py-14 mb-10 pr-8">
-        <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg grid grid-cols-3 gap-8">
+      <div className="bg-[#f6feff] md:py-14 mb-10 md:pr-8">
+        <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg  md:grid-cols-3 grid  p-6 gap-8">
           <div className=" space-y-2">
             <div className="flex items-center gap-5">
               <div className="bg-[#fcdded] w-11 h-11 rounded-full flex justify-center items-center">
@@ -171,6 +171,7 @@ export default function Biographie() {
               ipsam dolorem ea!
             </p>
           </div>
+
           <div className=" space-y-2">
             <div className="flex items-center gap-5">
               <div className="bg-[#f8eee2] w-11 h-11 rounded-full flex justify-center items-center">
@@ -189,6 +190,7 @@ export default function Biographie() {
               ipsam dolorem ea!
             </p>
           </div>
+
           <div className=" space-y-2">
             <div className="flex items-center gap-5">
               <div className="bg-[#d0cfe9] w-11 h-11 rounded-full flex justify-center items-center">
