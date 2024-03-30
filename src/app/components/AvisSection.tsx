@@ -1,12 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Grid, Mousewheel, Pagination } from "swiper/modules";
-import { commentDatas } from "./data";
+// import { commentDatas } from "./data";
 import CommentCard, { CommentCardOnePerView } from "./CommentCard";
+import { RegularFont } from "../config/fonts";
+import LoaderXL from "./LoaderXL";
 
 export default function AvisSection() {
-  const [commentData, setCommentData] = useState(commentDatas);
+  const [commentData, setCommentData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("/api/comments")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCommentData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <LoaderXL />;
+  }
 
   return (
     <section className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg my-12 mb-28 ">
@@ -25,10 +44,10 @@ export default function AvisSection() {
           className="w-full flex gap-3 items-center justify-center "
         >
           {commentData
-            .slice(
-              Math.floor(commentData.length * 0.45),
-              Math.floor(commentData.length * 0.75)
-            )
+            // .slice(
+            //   Math.floor(commentData.length * 0.45),
+            //   Math.floor(commentData.length * 0.75)
+            // )
             .map((comment) => (
               <SwiperSlide key={comment.id}>
                 <CommentCardOnePerView commentElement={comment} />
@@ -52,7 +71,7 @@ export default function AvisSection() {
           className="w-full flex gap-3 items-center justify-center "
         >
           {commentData
-            .slice(Math.floor(commentData.length * 0.75))
+            // .slice(Math.floor(commentData.length * 0.75))
             .map((comment) => (
               <SwiperSlide key={comment.id}>
                 <CommentCardOnePerView commentElement={comment} />
@@ -74,7 +93,7 @@ export default function AvisSection() {
             className="w-full flex gap-3 items-center justify-center"
           >
             {commentData
-              .slice(Math.floor(commentData.length * 0.65))
+              // .slice(Math.floor(commentData.length * 0.65))
               .map((comment) => (
                 <SwiperSlide key={comment.id}>
                   <CommentCard commentElement={comment} />
@@ -94,10 +113,10 @@ export default function AvisSection() {
             className="w-full flex gap-3 items-center justify-center"
           >
             {commentData
-              .slice(
-                Math.floor(commentData.length * 0.15),
-                Math.floor(commentData.length * 0.65)
-              )
+              // .slice(
+              //   Math.floor(commentData.length * 0.15),
+              //   Math.floor(commentData.length * 0.65)
+              // )
               .map((comment) => (
                 <SwiperSlide key={comment.id}>
                   <CommentCard commentElement={comment} />

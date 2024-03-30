@@ -22,15 +22,11 @@ export async function POST(request: Request) {
     console.log({ error });
   }
 
-  console.log({ ...comment });
-
   return NextResponse.json({ ...comment });
 }
 
 export async function GET() {
   const allComments = await prisma.comment.findMany();
 
-  console.log(allComments);
-
-  return NextResponse.json({ allComments });
+  return NextResponse.json(allComments);
 }

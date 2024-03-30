@@ -20,17 +20,17 @@ export default function CommentCard({ commentElement }: any) {
               />
             </svg>
             <p className={`${BoldFont.className} text-text text-sm`}>
-              {commentElement.userPseudo}
+              {commentElement.pseudo}
             </p>
           </div>
           <p className={`${RegularFont.className} text-text text-xs`}>
-            {commentElement.date}
+            {commentElement.commune}
           </p>
         </div>
         <p
           className={`${RegularFont.className} text-text text-sm text-clip overflow-hidden h-[6rem]`}
         >
-          {commentElement.comment}
+          {commentElement.message}
         </p>
       </div>
     </div>
@@ -55,17 +55,17 @@ export function CommentCardOnePerView({ commentElement }: any) {
               />
             </svg>
             <p className={`${BoldFont.className} text-text text-sm`}>
-              {commentElement.userPseudo}
+              {commentElement.pseudo}
             </p>
           </div>
           <p className={`${RegularFont.className} text-text text-xs`}>
-            {commentElement.date}
+            {commentElement.commune}
           </p>
         </div>
         <p
           className={`${RegularFont.className} text-text text-sm text-clip overflow-hidden h-[10rem]`}
         >
-          {commentElement.comment}
+          {commentElement.message}
         </p>
       </div>
     </div>
