@@ -15,7 +15,8 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./biographie.css";
 import { MdLightMode } from "react-icons/md";
-import { gouvImagesBiographie } from "./data";
+import { gouvImagesBiographie, gouvQualities } from "./data";
+import { RiLightbulbFlashFill } from "react-icons/ri";
 
 export default function Biographie() {
   return (
@@ -64,87 +65,45 @@ export default function Biographie() {
               modules={[FreeMode, Scrollbar, Mousewheel]}
               className={`${LightFont.className} text-text text-justify leading-4 swiperCard mt-4`}
             >
-              <SwiperSlide className="swiperSlide px-7 shadow-inner ">
+              <SwiperSlide className="swiperSlide px-7 shadow-inner pt-4 ">
                 <p className="leading-5 text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                  luctus, ex eu sagittis faucibus, ligula ipsum sagittis magna,
-                  et imperdiet dolor lectus eu libero. Vestibulum venenatis eget
-                  turpis sed faucibus. Maecenas in ullamcorper orci, eu
-                  ullamcorper sem.
+                  Homme Politique, Secrétaire National Honoraire de
+                  l&apos;UDPS/TSHISEKEDI | Marié et Père de famille |
+                </p>{" "}
+                <br />
+                <p
+                  className={`${BoldFont.className} text-bleu text-center md:text-left leading-5 text-base`}
+                >
+                  DÉPUTÉ PROVINCIAL 2024 CIRCONSCRIPTION DE MATETE
                 </p>{" "}
                 <br />
                 <p className="leading-5 text-sm">
-                  Suspendisse rhoncus fringilla nisl. Mauris eget lorem ac urna
-                  consectetur convallis non vel mi. Donec libero dolor, volutpat
-                  ut urna sit amet, aliquet molestie purus.
+                  Il a une clarté d&apos;esprit pour identifier les défis et les
+                  opportunités à venir, ainsi que pour définir une direction
+                  ambitieuse pour le développement de sa région.
                 </p>{" "}
                 <br />
                 <p className="leading-5 text-sm">
-                  Curabitur eget aliquam erat. Curabitur a neque vitae purus
-                  volutpat elementum. Vivamus quis vestibulum leo, efficitur
-                  ullamcorper velit. Integer tincidunt finibus metus vel porta.
-                  Mauris sed mauris congue, pretium est nec, malesuada purus.
-                  Nulla hendrerit consectetur arcu et lacinia.
+                  Il est capable d&apos;analyser de manière critique les
+                  problèmes complexes et de formuler des stratégies efficaces
+                  pour les résoudre. Il est capable d&apos;analyser de manière
+                  critique les problèmes complexes et de formuler des stratégies
+                  efficaces pour les résoudre.
                 </p>{" "}
                 <br />
                 <p className="leading-5 text-sm">
-                  Curabitur sed sodales leo. Nulla facilisi. Etiam condimentum,
-                  nisi id tempor vulputate, nisi justo cursus justo,
-                  pellentesque condimentum diam arcu sit amet leo. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. In placerat tellus a posuere vehicula. Donec
-                  diam massa, efficitur vitae mattis et, pretium in augue. Fusce
-                  iaculis mi quis ante venenatis, sit amet pellentesque orci
-                  aliquam. Vestibulum elementum posuere vehicula.
+                  Il sait faire preuve de flexibilité et d&apos;adaptabilité
+                  face aux changements imprévus, tout en gardant toujours à
+                  l&apos;esprit les objectifs à atteindre.
                 </p>{" "}
                 <br />
                 <p className="leading-5 text-sm">
-                  Sed tincidunt diam a massa pharetra faucibus. Praesent
-                  condimentum id arcu nec fringilla. Maecenas faucibus, ante et
-                  venenatis interdum, erat mi eleifend dui, at convallis nisl
-                  est nec arcu. Duis vitae arcu rhoncus, faucibus magna ut,
-                  tempus metus. Cras in nibh sed ipsum consequat rhoncus. Proin
-                  fringilla nulla ut augue tempor fermentum. Nunc hendrerit non
-                  nisi vitae finibus. Donec eget ornare libero. Aliquam auctor
-                  erat enim, a semper risus semper at. In ut dui in metus
-                  tincidunt euismod eget et lacus. Aenean et dictum urna, sed
-                  rhoncus lorem. Duis pharetra sagittis odio. Etiam a libero ut
-                  nisi feugiat tincidunt vel vitae turpis. Maecenas vel orci sit
-                  amet lorem hendrerit venenatis sollicitudin ut dui. Quisque
-                  rhoncus nibh in massa pretium scelerisque.
+                  Son approche pratique et terre-à-terre lui permet de trouver
+                  des solutions concrètes aux défis quotidiens auxquels sa
+                  région est confrontée, améliorant ainsi la vie quotidienne
+                  de ses citoyens.
                 </p>{" "}
                 <br />
-                <p className="leading-5 text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                  luctus, ex eu sagittis faucibus, ligula ipsum sagittis magna,
-                  et imperdiet dolor lectus eu libero. Vestibulum venenatis eget
-                  turpis sed faucibus. Maecenas in ullamcorper orci, eu
-                  ullamcorper sem. Etiam elit ante, luctus non ante sit amet,
-                  sodales vulputate odio. Aenean tristique nisl tellus, sit amet
-                  fringilla nisl volutpat cursus. Quisque dignissim lectus ac
-                  nunc consectetur mattis. Proin vel hendrerit ipsum, et
-                  lobortis dolor. Vestibulum convallis, nibh et tincidunt
-                  tristique, nisl risus facilisis lectus, ut interdum orci nisl
-                  ac nunc. Cras et aliquam felis. Quisque vel ipsum at elit
-                  sodales posuere eget non est. Fusce convallis vestibulum dolor
-                  non volutpat. Vivamus vestibulum quam ut ultricies pretium.
-                </p>{" "}
-                <br />
-                <p className="leading-5 text-sm">
-                  Sed tincidunt diam a massa pharetra faucibus. Praesent
-                  condimentum id arcu nec fringilla. Maecenas faucibus, ante et
-                  venenatis interdum, erat mi eleifend dui, at convallis nisl
-                  est nec arcu. Duis vitae arcu rhoncus, faucibus magna ut,
-                  tempus metus. Cras in nibh sed ipsum consequat rhoncus. Proin
-                  fringilla nulla ut augue tempor fermentum. Nunc hendrerit non
-                  nisi vitae finibus. Donec eget ornare libero. Aliquam auctor
-                  erat enim, a semper risus semper at. In ut dui in metus
-                  tincidunt euismod eget et lacus. Aenean et dictum urna, sed
-                  rhoncus lorem. Duis pharetra sagittis odio. Etiam a libero ut
-                  nisi feugiat tincidunt vel vitae turpis. Maecenas vel orci sit
-                  amet lorem hendrerit venenatis sollicitudin ut dui. Quisque
-                  rhoncus nibh in massa pretium scelerisque.
-                </p>
               </SwiperSlide>
             </Swiper>
           </div>
@@ -152,63 +111,24 @@ export default function Biographie() {
       </div>
 
       <div className="bg-[#f6feff] md:py-14 mb-10 md:pr-8">
-        <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg  md:grid-cols-3 grid  p-6 gap-8">
-          <div className=" space-y-2">
-            <div className="flex items-center gap-5">
-              <div className="bg-[#fcdded] w-11 h-11 rounded-full flex justify-center items-center">
-                <MdLightMode className="text-[#d44a88] h-7 w-7" />
+        <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg  md:grid-cols-4 grid  p-6 gap-8">
+          {gouvQualities.map((quality, index) => (
+            <div className=" space-y-2" key={index}>
+              <div className="flex items-center gap-5">
+                <div className="bg-[#fcd1d2] w-11 h-11 rounded-full flex justify-center items-center">
+                  <RiLightbulbFlashFill className="text-[#a60004] h-7 w-7`" />
+                </div>
+                <h3 className={`${BoldFont.className} text-text text-lg`}>
+                  {quality.title}
+                </h3>
               </div>
-              <h3 className={`${BoldFont.className} text-text text-lg`}>
-                Qualité du gouverneur 1
-              </h3>
+              <p
+                className={`${LightFont.className} text-sm text-grayHard text-justify`}
+              >
+                {quality.descriprion}
+              </p>
             </div>
-            <p
-              className={`${LightFont.className} text-sm text-grayHard text-justify`}
-            >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum sunt
-              omnis est modi at officiis illum. Aut minima veritatis
-              reprehenderit debitis perferendis non quos dolor modi, labore
-              ipsam dolorem ea!
-            </p>
-          </div>
-
-          <div className=" space-y-2">
-            <div className="flex items-center gap-5">
-              <div className="bg-[#f8eee2] w-11 h-11 rounded-full flex justify-center items-center">
-                <MdLightMode className="text-[#ffa95e] h-7 w-7" />
-              </div>
-              <h3 className={`${BoldFont.className} text-text text-lg`}>
-                Qualité du gouverneur 2
-              </h3>
-            </div>
-            <p
-              className={`${LightFont.className} text-sm text-grayHard text-justify`}
-            >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum sunt
-              omnis est modi at officiis illum. Aut minima veritatis
-              reprehenderit debitis perferendis non quos dolor modi, labore
-              ipsam dolorem ea!
-            </p>
-          </div>
-
-          <div className=" space-y-2">
-            <div className="flex items-center gap-5">
-              <div className="bg-[#d0cfe9] w-11 h-11 rounded-full flex justify-center items-center">
-                <MdLightMode className="text-[#050066] h-7 w-7" />
-              </div>
-              <h3 className={`${BoldFont.className} text-text text-lg`}>
-                Qualité du gouverneur 3
-              </h3>
-            </div>
-            <p
-              className={`${LightFont.className} text-sm text-grayHard text-justify`}
-            >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum sunt
-              omnis est modi at officiis illum. Aut minima veritatis
-              reprehenderit debitis perferendis non quos dolor modi, labore
-              ipsam dolorem ea!
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>

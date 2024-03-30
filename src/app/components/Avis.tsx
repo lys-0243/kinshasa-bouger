@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { BlackFont, MediumFont, RegularFont } from "../config/fonts";
+import { BlackFont, BoldFont, MediumFont, RegularFont } from "../config/fonts";
 import CustomForm from "./Form";
 import CommentCard, { CommentCardOnePerView } from "./CommentCard";
 // import { commentDatas } from "./data";
@@ -9,6 +9,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import LoaderXL from "./LoaderXL";
+import { BsArrowRightCircleFill, BsArrowRightSquareFill } from "react-icons/bs";
+import { LuArrowRightFromLine } from "react-icons/lu";
 
 export default function Avis() {
   const [commentData, setCommentData] = useState<any[]>([]);
@@ -40,6 +42,21 @@ export default function Avis() {
           Pesa avis na yo to solution oyo esengele , eloko prochain gouverneur
           il faut asala pona développement ya ville ya Kinshasa.
         </p>
+        <div className="flex flex-col items-center md:flex md:flex-row md:items-center md:gap-3">
+          <BsArrowRightSquareFill className=" rotate-90 md:rotate-0 h-5 w-5 text-bleu" />
+
+          <p className={`${MediumFont.className} text-text text-sm`}>
+            <span className={`${BoldFont.className} text-primary`}>
+              10 meilleures idées
+            </span>{" "}
+            ou{" "}
+            <span className={`${BoldFont.className} text-primary`}>
+              propositions
+            </span>{" "}
+            seront sélectionnées par commune : les proposants seront
+            des co-superviseurs
+          </p>
+        </div>
       </div>
 
       <div className=" h-[1px] bg-bleulight bg-opacity-10 mb-8"></div>
