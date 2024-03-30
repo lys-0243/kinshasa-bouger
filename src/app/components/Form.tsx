@@ -1,12 +1,70 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BoldFont, LightFont, MediumFont } from "../config/fonts";
 import { IoIosSend } from "react-icons/io";
 import { communes } from "./data";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { RiLoader2Line } from "react-icons/ri";
 
 export default function CustomForm() {
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const [dataComment, setDataComment] = useState({
+    pseudo: "",
+    commune: "Selectionnez votre commune",
+    prenom: "",
+    nom: "",
+    email: "",
+    telephone: "",
+    message: "",
+  });
+
+  const handleChange = (event: any) => {
+    let value = event.target.value;
+    const field = event.target.name;
+
+    setDataComment({
+      ...dataComment,
+      [field]: value,
+    });
+  };
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    try {
+      setLoading(true);
+      const response = await fetch(`/api/comments`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataComment),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        toast.success("Merci d'avoir participé");
+        setDataComment({
+          pseudo: "",
+          commune: "Selectionnez votre commune",
+          prenom: "",
+          nom: "",
+          email: "",
+          telephone: "",
+          message: "",
+        });
+        router.replace("/");
+        setLoading(false);
+      } else {
+        toast.error("Une erreur est survenue, merci de ressayer");
+      }
+    } catch (error) {
+      setLoading(false);
+      toast.error("Une erreur est survenue, merci de ressayer");
+      console.log({ error });
+    }
+  };
+
   return (
     <div className="isolate ">
-      <form className="">
+      <form className="" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-3">
           <div>
             <label
@@ -20,6 +78,8 @@ export default function CustomForm() {
                 name={"pseudo"}
                 required
                 placeholder={"ex: @fakal45"}
+                onChange={handleChange}
+                value={dataComment.pseudo}
                 className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
               />
             </div>
@@ -32,14 +92,17 @@ export default function CustomForm() {
             <div>
               <select
                 name="commune"
+                onChange={handleChange}
                 required
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight focus:ring-2 focus:ring-inset focus:ring-text sm:text-sm sm:leading-6"
               >
-                <option value="" className="text-grayLight">
-                  Selectionnez votre commune
+                <option value="" className="text-grayLight" selected disabled>
+                  {dataComment.commune}
                 </option>
                 {communes.map((commune) => (
-                  <option value={commune.title}>{commune.title}</option>
+                  <option value={commune.title} key={commune.title}>
+                    {commune.title}
+                  </option>
                 ))}
               </select>
             </div>
@@ -65,6 +128,8 @@ export default function CustomForm() {
                     type={"text"}
                     name={"prenom"}
                     required
+                    onChange={handleChange}
+                    value={dataComment.prenom}
                     placeholder={"Sylvain"}
                     className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                   />
@@ -82,6 +147,8 @@ export default function CustomForm() {
                     type={"text"}
                     name={"nom"}
                     required
+                    onChange={handleChange}
+                    value={dataComment.nom}
                     placeholder={"Tshiasuma"}
                     className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                   />
@@ -98,6 +165,8 @@ export default function CustomForm() {
                   <input
                     type={"email"}
                     name={"email"}
+                    value={dataComment.email}
+                    onChange={handleChange}
                     placeholder={"user@domain.com (Faculattif)"}
                     className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                   />
@@ -115,7 +184,9 @@ export default function CustomForm() {
                     type={"tel"}
                     name={"telephone"}
                     required
-                    placeholder={"user@+243 894 XXX XXX"}
+                    onChange={handleChange}
+                    placeholder={"+243 894 XXX XXX"}
+                    value={dataComment.telephone}
                     className={`block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight ${LightFont.className} focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                   />
                 </div>
@@ -134,6 +205,8 @@ export default function CustomForm() {
                 name="message"
                 required
                 rows={4}
+                onChange={handleChange}
+                value={dataComment.message}
                 placeholder="Saisissez votre avis ici"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight focus:ring-2 focus:ring-inset focus:ring-text sm:text-sm sm:leading-6"
               ></textarea>
@@ -143,10 +216,21 @@ export default function CustomForm() {
         <div className="mt-10">
           <button
             type="submit"
-            className={`w-full rounded-md bg-bleu px-3.5 py-2.5 text-center text-sm ${BoldFont.className} text-white shadow-sm hover:bg-bleulight transition duration-200 flex items-center gap-4 justify-center`}
+            disabled={loading}
+            className={
+              loading
+                ? `w-full rounded-md bg-grayLight px-3.5 py-2.5 text-center cursor-not-allowed text-sm ${BoldFont.className} text-white shadow-sm  flex items-center gap-4 justify-center`
+                : `w-full rounded-md bg-bleu px-3.5 py-2.5 text-center text-sm ${BoldFont.className} text-white shadow-sm hover:bg-bleulight transition duration-200 flex items-center gap-4 justify-center`
+            }
           >
-            Envoyer
-            <IoIosSend className="h-7 w-7" />
+            {loading ? (
+              <RiLoader2Line className="animate-spin text-bleu h-6 w-6" />
+            ) : (
+              <>
+                Envoyer
+                <IoIosSend className="h-7 w-7" />
+              </>
+            )}
           </button>
         </div>
       </form>
