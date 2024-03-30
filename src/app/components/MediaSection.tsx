@@ -9,7 +9,7 @@ export default function MediaSection() {
     <section className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg m-4 md:m-0">
       <div className="my-3 space-y-2 md:space-y-4">
         <h2 className={`${BoldFont.className} text-bleu text-3xl md:text-5xl`}>
-          La population l'aime !
+          La population l&apos;aime !
         </h2>
         <p className={`${RegularFont.className} text-text`}>Retour en images</p>
       </div>
