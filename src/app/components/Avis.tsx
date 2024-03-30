@@ -64,6 +64,7 @@ export default function Avis() {
               className="w-full flex gap-3 items-center justify-center"
             >
               {commentData
+                .reverse()
                 // .slice(0, Math.floor(commentData.length * 0.15))
                 .map((comment, index) => (
                   <SwiperSlide key={index}>

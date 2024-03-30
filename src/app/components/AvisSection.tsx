@@ -44,6 +44,7 @@ export default function AvisSection() {
           className="w-full flex gap-3 items-center justify-center "
         >
           {commentData
+            .reverse()
             // .slice(
             //   Math.floor(commentData.length * 0.45),
             //   Math.floor(commentData.length * 0.75)
@@ -93,6 +94,7 @@ export default function AvisSection() {
             className="w-full flex gap-3 items-center justify-center"
           >
             {commentData
+              .reverse()
               // .slice(Math.floor(commentData.length * 0.65))
               .map((comment) => (
                 <SwiperSlide key={comment.id}>
