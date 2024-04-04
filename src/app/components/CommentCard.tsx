@@ -19,13 +19,15 @@ export default function CommentCard({ commentElement }: any) {
                 clipRule="evenodd"
               />
             </svg>
-            <p className={`${BoldFont.className} text-text text-sm`}>
-              {commentElement.pseudo}
-            </p>
+            <div>
+              <p className={`${BoldFont.className} text-text text-sm`}>
+                {commentElement.pseudo}
+              </p>
+              <p className={`${RegularFont.className} text-text text-xs`}>
+                {commentElement.commune}
+              </p>
+            </div>
           </div>
-          <p className={`${RegularFont.className} text-text text-xs`}>
-            {commentElement.commune}
-          </p>
         </div>
         <p
           className={`${RegularFont.className} text-text text-sm text-clip overflow-hidden h-[6rem]`}
@@ -54,16 +56,18 @@ export function CommentCardOnePerView({ commentElement }: any) {
                 clipRule="evenodd"
               />
             </svg>
-            <p className={`${BoldFont.className} text-text text-sm`}>
-              {commentElement.pseudo}
-            </p>
+            <div>
+              <p className={`${BoldFont.className} text-text text-sm`}>
+                {commentElement.pseudo}
+              </p>
+              <p className={`${RegularFont.className} text-text text-xs`}>
+                {commentElement.commune}
+              </p>
+            </div>
           </div>
-          <p className={`${RegularFont.className} text-text text-xs`}>
-            {commentElement.commune}
-          </p>
         </div>
         <p
-          className={`${RegularFont.className} text-text text-sm text-clip overflow-hidden h-[10rem]`}
+          className={`${RegularFont.className} text-text text-sm text-clip overflow-hidden h-[6rem]`}
         >
           {commentElement.message}
         </p>

@@ -21,8 +21,8 @@ import { RiLightbulbFlashFill } from "react-icons/ri";
 export default function Biographie() {
   return (
     <section id="Gouv" className=" mt-12 md:mt-6">
-      <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg md:bg-grayLight2 rounded-xl mb-6 md:pr-8">
-        <div className="flex flex-col-reverse md:flex md:flex-row md:items-center md:py-14 md:pl-10 gap-5 md:gap-0">
+      <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg lg:bg-grayLight2 rounded-xl mb-6 lg:pr-8">
+        <div className="flex flex-col-reverse items-center lg:flex lg:flex-row lg:items-center lg:py-14 lg:pl-10 gap-5 lg:gap-0">
           <Swiper
             spaceBetween={30}
             autoplay={{
@@ -46,11 +46,16 @@ export default function Biographie() {
             ))}
           </Swiper>
 
-          <div className="md:w-1/2">
-            <div className=" md:space-y-2 md:mb-4 text-center md:text-left">
-              <h2 className={`${BlackFont.className} text-bleu text-4xl`}>
-                Diyabanza Mwananene
-              </h2>
+          <div className="sm:w-3/4 lg:w-1/2">
+            <div className="text-center sm lg:space-y-2 lg:mb-4 lg:text-left">
+              <div className="flex flex-col mb-4 lg:flex lg:flex-row lg:gap-4">
+                <h2 className={`${BlackFont.className} text-bleu text-4xl`}>
+                  Diyabanza
+                </h2>
+                <h2 className={`${BlackFont.className} text-bleu text-4xl`}>
+                  Mwananene
+                </h2>
+              </div>
               <h3 className={`${MediumFont.className} text-primary text-base`}>
                 Biographie, qui est-il ?
               </h3>
@@ -71,11 +76,18 @@ export default function Biographie() {
                   l&apos;UDPS/TSHISEKEDI | Marié et Père de famille |
                 </p>{" "}
                 <br />
-                <p
-                  className={`${BoldFont.className} text-bleu text-center md:text-left leading-5 text-base`}
-                >
-                  DÉPUTÉ PROVINCIAL 2024 CIRCONSCRIPTION DE MATETE
-                </p>{" "}
+                <div className="flex flex-col mb-4 lg:flex lg:flex-row lg:gap-3">
+                  <p
+                    className={`${BoldFont.className} text-bleu text-center md:text-left leading-5 text-base`}
+                  >
+                    DÉPUTÉ PROVINCIAL 2024
+                  </p>
+                  <p
+                    className={`${BoldFont.className} text-bleu text-center md:text-left leading-5 text-base`}
+                  >
+                    CIRCONSCRIPTION DE MATETE
+                  </p>
+                </div>
                 <br />
                 <p className="leading-5 text-sm">
                   Il a une clarté d&apos;esprit pour identifier les défis et les
@@ -110,8 +122,8 @@ export default function Biographie() {
         </div>
       </div>
 
-      <div className="bg-[#f6feff] md:py-14 mb-10 md:pr-8">
-        <div className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg  md:grid-cols-4 grid  p-6 gap-8">
+      <div className="bg-[#f6feff] md:py-14 mb-10 md:px-8 lg:px-0 lg:pr-8">
+        <div className="lg:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg md:grid-cols-2 lg:grid-cols-4 grid  p-6 gap-8">
           {gouvQualities.map((quality, index) => (
             <div className=" space-y-2" key={index}>
               <div className="flex items-center gap-5">

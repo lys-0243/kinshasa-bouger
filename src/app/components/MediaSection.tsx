@@ -6,7 +6,7 @@ import { BoldFont, RegularFont } from "../config/fonts";
 
 export default function MediaSection() {
   return (
-    <section className="md:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg m-4 md:m-0">
+    <section className="md:mx-10 bg-white lg:mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg m-4 md:m-0">
       <div className="my-3 space-y-2 md:space-y-4">
         <h2 className={`${BoldFont.className} text-bleu text-3xl md:text-5xl`}>
           La population l&apos;aime !

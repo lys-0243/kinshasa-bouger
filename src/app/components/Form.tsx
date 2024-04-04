@@ -11,7 +11,7 @@ export default function CustomForm() {
   const router = useRouter();
   const [dataComment, setDataComment] = useState({
     pseudo: "",
-    commune: "Selectionnez votre commune",
+    commune: "",
     prenom: "",
     nom: "",
     email: "",
@@ -31,34 +31,38 @@ export default function CustomForm() {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    try {
-      setLoading(true);
-      const response = await fetch(`/api/comments`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataComment),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        toast.success("Merci d'avoir participé");
-        setDataComment({
-          pseudo: "",
-          commune: "Selectionnez votre commune",
-          prenom: "",
-          nom: "",
-          email: "",
-          telephone: "",
-          message: "",
+    if (dataComment.commune === "Selectionnez votre commune") {
+      toast.error("Veuillez selectionner votre commune");
+    } else {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/comments`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataComment),
         });
-        router.replace("/");
+        const data = await response.json();
+        if (response.ok) {
+          toast.success("Merci d'avoir participé");
+          setDataComment({
+            pseudo: "",
+            commune: "Selectionnez votre commune",
+            prenom: "",
+            nom: "",
+            email: "",
+            telephone: "",
+            message: "",
+          });
+          router.replace("/");
+          setLoading(false);
+        } else {
+          toast.error("Une erreur est survenue, merci de ressayer");
+        }
+      } catch (error) {
         setLoading(false);
-      } else {
         toast.error("Une erreur est survenue, merci de ressayer");
+        console.log({ error });
       }
-    } catch (error) {
-      setLoading(false);
-      toast.error("Une erreur est survenue, merci de ressayer");
-      console.log({ error });
     }
   };
 
@@ -94,11 +98,10 @@ export default function CustomForm() {
                 name="commune"
                 onChange={handleChange}
                 required
-                value={dataComment.commune}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-grayLight focus:ring-2 focus:ring-inset focus:ring-text sm:text-sm sm:leading-6"
               >
                 <option value="" className="text-grayLight" selected disabled>
-                  {dataComment.commune}
+                  Selectionnez votre commune
                 </option>
                 {communes.map((commune) => (
                   <option value={commune.title} key={commune.title}>

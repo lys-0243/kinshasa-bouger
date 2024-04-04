@@ -29,7 +29,7 @@ export default function AvisSection() {
 
   return (
     <section className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg my-12 mb-28 ">
-      <div className="hidden md:flex md:items-start md:justify-between md:gap-6 md:mt-10">
+      <div className="hidden lg:flex lg:items-start lg:justify-between lg:gap-6 lg:mt-10">
         <Swiper
           autoplay={{
             delay: 3800,
@@ -57,13 +57,60 @@ export default function AvisSection() {
         </Swiper>
       </div>
 
-      <div className="hidden md:flex md:items-start md:justify-between md:gap-6 md:mt-10">
+      <div className="hidden lg:flex lg:items-start lg:justify-between lg:gap-6 lg:mt-10">
         <Swiper
           autoplay={{
             delay: 3900,
             disableOnInteraction: false,
           }}
           slidesPerView={4}
+          grid={{
+            rows: 2,
+          }}
+          spaceBetween={30}
+          modules={[Grid, Autoplay]}
+          className="w-full flex gap-3 items-center justify-center "
+        >
+          {commentData
+            // .slice(Math.floor(commentData.length * 0.75))
+            .map((comment) => (
+              <SwiperSlide key={comment.id}>
+                <CommentCardOnePerView commentElement={comment} />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
+
+      <div className="hidden lg:hidden md:flex md:items-start md:justify-between md:gap-6 md:mt-10 md:px-10">
+        <Swiper
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          slidesPerView={2}
+          grid={{
+            rows: 2,
+          }}
+          spaceBetween={30}
+          modules={[Grid, Autoplay]}
+          className="w-full flex gap-3 items-center justify-center "
+        >
+          {commentData
+            // .slice(Math.floor(commentData.length * 0.75))
+            .map((comment) => (
+              <SwiperSlide key={comment.id}>
+                <CommentCardOnePerView commentElement={comment} />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
+      <div className="hidden lg:hidden md:flex md:items-start md:justify-between md:gap-6 md:mt-10  md:px-8">
+        <Swiper
+          autoplay={{
+            delay: 3900,
+            disableOnInteraction: false,
+          }}
+          slidesPerView={3}
           grid={{
             rows: 2,
           }}

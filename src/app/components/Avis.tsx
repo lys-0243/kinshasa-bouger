@@ -29,21 +29,21 @@ export default function Avis() {
 
   return (
     <section
-      className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg my-6 mb-20 mt-20 md:mt-0"
+      className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-lg my-6 mb-20 mt-20 md:mt-0 "
       id="DonnerSonAvis"
     >
-      <div className="w-2/2 space-y-3 mb-7 px-3 text-center md:text-left">
+      <div className="w-2/2 space-y-3 mb-7 px-3 text-center xl:text-left">
         <h2 className={`${BlackFont.className} text-3xl text-bleu`}>
           Postez votre avis...
         </h2>
         <p
-          className={`${RegularFont.className} text-text text-xs md:text-base md:w-2/3`}
+          className={`${RegularFont.className} text-text text-xs md:text-base md:mx-20 lg:mx-0 lg:w-3/5`}
         >
           Pesa avis na yo to solution oyo esengele , eloko prochain gouverneur
           il faut asala pona développement ya ville ya Kinshasa.
         </p>
-        <div className="flex flex-col items-center md:flex md:flex-row md:items-center md:gap-3">
-          <BsArrowRightSquareFill className=" rotate-90 md:rotate-0 h-5 w-5 text-bleu" />
+        <div className="flex flex-col items-center md:mx-20 lg:mx-0 lg:flex lg:flex-row lg:items-center lg:gap-3 ">
+          <BsArrowRightSquareFill className=" rotate-90 lg:rotate-0 h-5 w-5 text-bleu" />
 
           <p className={`${MediumFont.className} text-text text-sm`}>
             <span className={`${BoldFont.className} text-primary`}>
@@ -61,15 +61,15 @@ export default function Avis() {
 
       <div className=" h-[1px] bg-bleulight bg-opacity-10 mb-8"></div>
 
-      <div className="mx-6 md:mx-0 md:flex md:items-start md:justify-between md:gap-6">
-        <div className="w-full md:w-1/2">
+      <div className="mx-6 md:mx-20 lg:mx-0 lg:flex lg:items-start lg:justify-between lg:gap-6">
+        <div className="w-full lg:w-1/2">
           <CustomForm />
         </div>
 
         {loading ? (
           <LoaderXL />
         ) : (
-          <div className="md:w-1/2 flex flex-col items-end ">
+          <div className="lg:w-1/2 flex flex-col items-end ">
             <Swiper
               autoplay={{
                 delay: 3500,
